@@ -1,4 +1,4 @@
-import Lotto from '../entities/Lotto.js';
+import Lotto from './Lotto.js';
 import ERROR_MESSAGES from '../../constants/errorMessages.js';
 
 class WinningLotto extends Lotto {
