@@ -19,8 +19,8 @@ describe('계산기 클래스 테스트', () => {
 
     const calculator = new Calculator();
 
-    expect(calculator.getProfitRate(PURCHASE_MONEY, WINNING_STATISTIC)).toBe(
-      PROFIT_RATE
-    );
+    expect(
+      calculator.calculateProfitRate(PURCHASE_MONEY, WINNING_STATISTIC)
+    ).toBe(PROFIT_RATE);
   });
 });

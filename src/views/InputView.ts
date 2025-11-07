@@ -16,7 +16,9 @@ class InputView {
   async getWinningNumbers() {
     const input = await Console.readLineAsync('당첨 번호를 입력해 주세요.\n');
 
-    const numbers = input.split(',').map((number) => Number(number.trim()));
+    const numbers: number[] = input
+      .split(',')
+      .map((number: string) => Number(number.trim()));
 
     numbers.forEach((number) => this.#validateNumberInRange(number));
 
@@ -33,13 +35,13 @@ class InputView {
     return number;
   }
 
-  #validateNumberPositive(number) {
+  #validateNumberPositive(number: unknown) {
     if (Number.isNaN(number) || !Number.isInteger(number) || number === 0) {
       throw new Error(ERROR_MESSAGES.NUMBER_NOT_POSITIVE);
     }
   }
 
-  #validateNumberInRange(number) {
+  #validateNumberInRange(number: number) {
     this.#validateNumberPositive(number);
 
     if (
@@ -50,7 +52,7 @@ class InputView {
     }
   }
 
-  #valiadtePurchasePrice(purchasePrice) {
+  #valiadtePurchasePrice(purchasePrice: number) {
     if (purchasePrice % LOTTO_CONFIG.PRICE !== 0) {
       throw new Error(ERROR_MESSAGES.INVALID_PRICE);
     }

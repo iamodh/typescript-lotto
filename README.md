@@ -1,4 +1,4 @@
-# javascript-lotto-precourse
+# typescript-lotto-precourse
 
 ## 기능 목록
 

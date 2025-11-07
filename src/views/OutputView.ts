@@ -1,8 +1,10 @@
 import { Console } from '@woowacourse/mission-utils';
 import PRIZE_CONFIG from '../constants/prizeConfig.js';
+import Lotto from '../models/domains/Lotto.js';
+import { WinningStatistic } from '../types/lotto.js';
 
 class OutputView {
-  printPurchasedLottos(lottos) {
+  printPurchasedLottos(lottos: Lotto[]) {
     Console.print(`${lottos.length}개를 구매했습니다.`);
     for (const lotto of lottos) {
       const sortedNumbers = this.#sortLottoNumbers(lotto.getNumbers());
@@ -10,11 +12,11 @@ class OutputView {
     }
   }
 
-  #sortLottoNumbers(numbers) {
+  #sortLottoNumbers(numbers: number[]) {
     return numbers.sort((a, b) => a - b);
   }
 
-  printWinningStatistic(winningStatistic) {
+  printWinningStatistic(winningStatistic: WinningStatistic) {
     Console.print('당첨 통계');
     Console.print('---');
 
@@ -27,12 +29,12 @@ class OutputView {
     }
   }
 
-  printProfitRate(profitRate) {
+  printProfitRate(profitRate: number) {
     Console.print(`총 수익률은 ${profitRate}%입니다.`);
   }
 
-  printError(error) {
-    Console.print(error);
+  printErrorMessage(errorMessage: string) {
+    Console.print(errorMessage);
   }
 
   printNewLine() {

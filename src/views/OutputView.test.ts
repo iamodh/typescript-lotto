@@ -1,4 +1,4 @@
-import Lotto from '../models/entities/Lotto.js';
+import Lotto from '../models/domains/Lotto.js';
 import { getLogSpy } from '../utils/mocks.js';
 import OutputView from './OutputView.js';
 

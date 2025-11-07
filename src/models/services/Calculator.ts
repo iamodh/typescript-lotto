@@ -1,8 +1,12 @@
 import PRIZE_CONFIG from '../../constants/prizeConfig.js';
+import { WinningStatistic } from '../../types/lotto.js';
 
 class Calculator {
-  getProfitRate(purchasePrice, winningStatistic) {
-    const profit = this.#calculateProfit(winningStatistic);
+  public calculateProfitRate(
+    purchasePrice: number,
+    winningStatistic: WinningStatistic
+  ) {
+    const profit = this.calculateProfit(winningStatistic);
     if (profit === 0) return 0;
 
     // 소숫점 반환 결과를 Number로 저장하기 위함
@@ -11,11 +15,11 @@ class Calculator {
     return profitRate;
   }
 
-  #calculateProfit(winningStatistic) {
+  private calculateProfit(winningStatistic: WinningStatistic) {
     let profit = 0;
 
     for (const [rank, winners] of Object.entries(winningStatistic)) {
-      profit += PRIZE_CONFIG.MONEY[rank] * (winners as Array<string>).length;
+      profit += PRIZE_CONFIG.MONEY[rank] * winners.length;
     }
 
     return profit;

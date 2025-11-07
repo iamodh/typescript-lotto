@@ -1,10 +1,9 @@
-import Lotto from '../entities/Lotto.js';
-import WinningLotto from '../entities/WinningLotto.js';
+import Lotto from '../domains/Lotto.js';
+import WinningLotto from '../domains/WinningLotto.js';
 import Checker from './Checker.js';
 
 describe('당첨 확인 클래스 테스트', () => {
   test('사용자가 구매한 모든 로또의 당첨을 확인하고 당첨 통계를 반환한다.', () => {
-    const PURCHASE_PRICE = 7000;
     const WINNING_NUMBERS = [1, 2, 3, 4, 5, 6];
     const BONUS_NUMBER = 7;
 
@@ -48,7 +47,7 @@ describe('당첨 확인 클래스 테스트', () => {
 
     const checker = new Checker();
 
-    expect(checker.getWinningStatistic(lottos, winningLotto)).toEqual(
+    expect(checker.checkWinningStatistic(lottos, winningLotto)).toEqual(
       WINNING_STATISTIC
     );
   });
