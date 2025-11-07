@@ -1,6 +1,6 @@
-import WinningLotto from '/src/models/entities/WinningLotto';
-import Checker from '/src/models/services/Checker';
-import Lotto from '../../../src/models/entities/Lotto';
+import Lotto from '../entities/Lotto.js';
+import WinningLotto from '../entities/WinningLotto.js';
+import Checker from './Checker.js';
 
 describe('당첨 확인 클래스 테스트', () => {
   test('사용자가 구매한 모든 로또의 당첨을 확인하고 당첨 통계를 반환한다.', () => {
@@ -32,7 +32,7 @@ describe('당첨 확인 클래스 테스트', () => {
       NO_PRIZE,
     ];
     const lottos = [];
-    for (number of NUMBERS) {
+    for (const number of NUMBERS) {
       lottos.push(new Lotto(number));
     }
 

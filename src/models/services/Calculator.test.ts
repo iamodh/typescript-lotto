@@ -1,5 +1,5 @@
-import PRIZE_CONFIG from '/src/constants/PrizeConfig';
-import Calculator from '/src/models/services/Calculator';
+import PRIZE_CONFIG from '../../constants/prizeConfig.js';
+import Calculator from './Calculator.js';
 
 describe('계산기 클래스 테스트', () => {
   test('당첨 결과에 따른 수익 금액을 계산하고 수익률을 반환한다.', () => {

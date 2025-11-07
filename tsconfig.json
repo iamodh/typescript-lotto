@@ -3,7 +3,8 @@
     "outDir": "./built",
     "allowJs": true,
     "target": "esnext",
-    "module": "nodenext"
+    "module": "nodenext",
+    "types": ["vitest/globals"]
   },
   "include": ["./src/**/*"]
 }

@@ -1,5 +1,5 @@
-import App from '/src/App.js';
-import { getLogSpy, mockQuestions, mockRandoms } from '/src/utils/mocks.js';
+import App from './App.js';
+import { getLogSpy, mockQuestions, mockRandoms } from './utils/mocks.js';
 
 const runException = async (input) => {
   // given
@@ -21,7 +21,7 @@ const runException = async (input) => {
 
 describe('로또 테스트', () => {
   beforeEach(() => {
-    jest.restoreAllMocks();
+    vi.restoreAllMocks();
   });
 
   test('기능 테스트', async () => {

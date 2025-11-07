@@ -1,6 +1,6 @@
-import Lotto from '../../src/models/entities/Lotto';
-import { getLogSpy } from '/src/utils/mocks';
-import OutputView from '/src/views/OutputView';
+import Lotto from '../models/entities/Lotto.js';
+import { getLogSpy } from '../utils/mocks.js';
+import OutputView from './OutputView.js';
 
 describe('출력 뷰 클래스 테스트', () => {
   test('구매한 로또들을 받아 각 번호를 오름차순으로 정렬한 후, 형식에 맞게 출력한다.', () => {
@@ -18,7 +18,7 @@ describe('출력 뷰 클래스 테스트', () => {
       [1, 3, 5, 14, 22, 45],
     ];
     const lottos = [];
-    for (number of NUMBERS) {
+    for (const number of NUMBERS) {
       lottos.push(new Lotto(number));
     }
 
