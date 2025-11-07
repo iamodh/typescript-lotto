@@ -15,7 +15,7 @@ class Calculator {
     let profit = 0;
 
     for (const [rank, winners] of Object.entries(winningStatistic)) {
-      profit += PRIZE_CONFIG.MONEY[rank] * winners.length;
+      profit += PRIZE_CONFIG.MONEY[rank] * (winners as Array<string>).length;
     }
 
     return profit;

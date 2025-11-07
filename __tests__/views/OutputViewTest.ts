@@ -1,11 +1,10 @@
 import Lotto from '../../src/models/entities/Lotto';
-import User from '/src/models/entities/User';
-import { getLogSpy, mockRandoms } from '/src/utils/mocks';
-import Output from '/src/views/OutputView';
+import { getLogSpy } from '/src/utils/mocks';
+import OutputView from '/src/views/OutputView';
 
 describe('출력 뷰 클래스 테스트', () => {
   test('구매한 로또들을 받아 각 번호를 오름차순으로 정렬한 후, 형식에 맞게 출력한다.', () => {
-    const output = new Output();
+    const outputView = new OutputView();
     const logSpy = getLogSpy();
 
     const NUMBERS = [
@@ -35,7 +34,7 @@ describe('출력 뷰 클래스 테스트', () => {
       '[1, 3, 5, 14, 22, 45]',
     ];
 
-    output.printPurchasedLottos(lottos);
+    outputView.printPurchasedLottos(lottos);
 
     // logSpy가 log를 포함한 string을 매개변수로 호출되었는지 테스트
     logs.forEach((log) => {
@@ -53,9 +52,9 @@ describe('출력 뷰 클래스 테스트', () => {
     };
 
     const logSpy = getLogSpy();
-    const output = new Output();
+    const outputView = new OutputView();
 
-    output.printWinningStatistic(WINNING_STATISTIC);
+    outputView.printWinningStatistic(WINNING_STATISTIC);
 
     const logs = [
       '당첨 통계',
@@ -77,8 +76,8 @@ describe('출력 뷰 클래스 테스트', () => {
     const logSpy = getLogSpy();
     const log = '총 수익률은 62.5%입니다.';
 
-    const output = new Output();
-    output.printProfitRate(PROFIT_RATE);
+    const outputView = new OutputView();
+    outputView.printProfitRate(PROFIT_RATE);
 
     expect(logSpy).toHaveBeenCalledWith(expect.stringContaining(log));
   });

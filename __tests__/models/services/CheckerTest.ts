@@ -1,5 +1,3 @@
-import { mockRandoms } from '/src/utils/mocks';
-import User from '/src/models/entities/User';
 import WinningLotto from '/src/models/entities/WinningLotto';
 import Checker from '/src/models/services/Checker';
 import Lotto from '../../../src/models/entities/Lotto';
